@@ -191,7 +191,7 @@ function create(stud) {
   }
 
   node.setAttribute("data-rank", stud.Rank);
-  node.setAttribute("onclick", "getResult(" + stud.Rollno + ")");
+  node.setAttribute("onclick", `getResult("${stud.Rollno}")`);
   node.setAttribute(
     "data-base",
     Number(Cgpa.innerText) >= 9.5 && Number(Cgpa.innerText) < 10
@@ -256,18 +256,7 @@ function clear() {
 
 // Student Full Result Rohit Hill API
 function getResult(rollNo) {
-  fetch(`https://nithp.herokuapp.com/api/result/${rollNo}`, {
-    headers: {
-      credentials: "omit",
-      referrerPolicy: "no-referrer-when-downgrade",
-      body: null,
-      method: "GET",
-      mode: "cors",
-      "Access-Control-Allow-Origin": "*"
-    }
-  })
-    .then(res => res.json())
-    .then(data => console.log(data));
+  window.location.href = `https://nithp.herokuapp.com/result/student?rollno=${rollNo}`;
 }
 
 // Pagination navigation // ----------------------------------------------------------------------------------------------------
