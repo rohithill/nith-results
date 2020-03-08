@@ -256,7 +256,7 @@ function clear() {
 
 // Student Full Result Rohit Hill API
 function getResult(rollNo) {
-  window.location.href = `https://nithp.herokuapp.com/result/student?rollno=${rollNo}`;
+  window.location.href = `https://nithp.herokuapp.com/result/student?roll=${rollNo}`;
 }
 
 // Pagination navigation // ----------------------------------------------------------------------------------------------------
